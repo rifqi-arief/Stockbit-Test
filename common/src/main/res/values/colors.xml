@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#414141</color>
+<!--    <color name="colorPrimary">#414141</color>-->
+    <color name="colorPrimary">#17914E</color>
     <color name="colorPrimaryDark">#3B3B3B</color>
     <color name="colorAccent">#69F0AE</color>
+
+    <color name="greyscale_600">#565656</color>
+    <color name="greyscale_500">#707070</color>
+    <color name="greyscale_400">#A7A7A7</color>
+    <color name="greyscale_300">#C4C4C4</color>
+    <color name="greyscale_200">#F5F5F5</color>
+
 </resources>

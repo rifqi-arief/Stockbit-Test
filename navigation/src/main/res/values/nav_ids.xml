@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="authentication_flow" type="id" />
+    <item name="watchlist_flow" type="id" />
+    <item name="portofolio_flow" type="id" />
+</resources>

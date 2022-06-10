@@ -28,4 +28,8 @@ dependencies {
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
+    // FEATURE
+    implementation project(Modules.authentication)
+    implementation project(Modules.watchlist)
+    implementation project(Modules.portofolio)
 }
