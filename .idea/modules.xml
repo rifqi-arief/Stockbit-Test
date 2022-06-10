@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Stockbit_Test.iml" filepath="$PROJECT_DIR$/.idea/modules/Stockbit_Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Stockbit_Test.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Stockbit_Test.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Stockbit_Test.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Stockbit_Test.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/Stockbit_Test.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/Stockbit_Test.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common_test/Stockbit_Test.common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common_test/Stockbit_Test.common_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Stockbit_Test.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Stockbit_Test.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/local/Stockbit_Test.data.local.iml" filepath="$PROJECT_DIR$/.idea/modules/data/local/Stockbit_Test.data.local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/model/Stockbit_Test.data.model.iml" filepath="$PROJECT_DIR$/.idea/modules/data/model/Stockbit_Test.data.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/remote/Stockbit_Test.data.remote.iml" filepath="$PROJECT_DIR$/.idea/modules/data/remote/Stockbit_Test.data.remote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/repository/Stockbit_Test.data.repository.iml" filepath="$PROJECT_DIR$/.idea/modules/data/repository/Stockbit_Test.data.repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/navigation/Stockbit_Test.navigation.iml" filepath="$PROJECT_DIR$/.idea/modules/navigation/Stockbit_Test.navigation.iml" />
+    </modules>
+  </component>
+</project>
