@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../../android_commons.gradle'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
 
 dependencies {
     implementation KotlinLibraries.kotlin

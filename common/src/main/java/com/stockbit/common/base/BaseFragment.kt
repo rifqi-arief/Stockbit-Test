@@ -43,4 +43,6 @@ abstract class BaseFragment: Fragment() {
      * [FragmentNavigatorExtras] mainly used to enable Shared Element transition
      */
     open fun getExtras(): FragmentNavigator.Extras = FragmentNavigatorExtras()
+
+
 }
