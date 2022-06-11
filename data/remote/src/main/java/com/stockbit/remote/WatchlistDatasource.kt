@@ -7,8 +7,8 @@ import com.stockbit.model.WatchlistModel
  */
 class WatchlistDatasource(private val watchlistService: WatchlistService) {
 
-    suspend fun fetchWatclistAsync() : List<WatchlistModel> {
-        val response = watchlistService.fetchWatchlistAsync()
+    suspend fun fetchWatclistAsync(page : Int) : List<WatchlistModel> {
+        val response = watchlistService.fetchWatchlistAsync(page)
         if (response.message?.uppercase().equals("success".uppercase())){
             val watchlist: MutableList<WatchlistModel> = mutableListOf()
             response.data?.forEach {

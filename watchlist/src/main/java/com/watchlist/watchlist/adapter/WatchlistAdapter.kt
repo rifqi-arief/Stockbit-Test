@@ -6,9 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.stockbit.model.WatchlistModel
 import com.watchlist.watchlist.databinding.ItemWatchlistBinding
+import kotlin.collections.ArrayList
 
 
-class WatchlistAdapter(private val arrWatchlist: List<WatchlistModel>, private val onSelect: (WatchlistModel?) -> Unit) : RecyclerView.Adapter<WatchlistAdapter.ViewHolder>()  {
+class WatchlistAdapter( private val onSelect: (WatchlistModel?) -> Unit) : RecyclerView.Adapter<WatchlistAdapter.ViewHolder>()  {
+
+    private var arrWatchlist =  ArrayList<WatchlistModel>()
+
+    fun setData(watchlist: ArrayList<WatchlistModel>, oldCount : Int, watchlistSize : Int) {
+        if (watchlist == null) return
+        this.arrWatchlist = watchlist
+//        notifyDataSetChanged()
+        notifyItemRangeInserted(oldCount, watchlistSize)
+    }
 
     class ViewHolder(private val binding : ItemWatchlistBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(watchlist : WatchlistModel, onSelect: (WatchlistModel?) -> Unit){

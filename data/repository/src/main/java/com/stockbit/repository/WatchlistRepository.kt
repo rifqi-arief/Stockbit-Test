@@ -13,18 +13,17 @@ import com.stockbit.repository.utils.networkBoundResource
 import kotlinx.coroutines.flow.Flow
 
 interface WatchlistRepository {
-    suspend fun getWatchlist(): Flow<Resource<List<WatchlistModel>>>
+    suspend fun getWatchlist(page : Int): Flow<Resource<List<WatchlistModel>>>
 }
 
 class WatchlistRepositoryImpl(private val remote: WatchlistDatasource, private val db: WatchlistDao): WatchlistRepository {
-    override suspend fun getWatchlist(): Flow<Resource<List<WatchlistModel>>> =
+    override suspend fun getWatchlist(page : Int): Flow<Resource<List<WatchlistModel>>> =
         networkBoundResource(
             query = {
                 db.getAll()
             },
             fetch = {
-
-                remote.fetchWatclistAsync()
+                remote.fetchWatclistAsync(page)
             },
             saveFetchResult = { response ->
                 db.deleteAll()
