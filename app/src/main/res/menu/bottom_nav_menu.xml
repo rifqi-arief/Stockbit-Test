@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/watchlist_flow"
+        android:icon="@drawable/ic_watchlist"
+        android:title="@string/watchlist" />
+
+    <item
+        android:id="@id/portofolio_flow"
+        android:icon="@drawable/ic_portofolio"
+        android:title="@string/portofolio" />
+
+</menu>

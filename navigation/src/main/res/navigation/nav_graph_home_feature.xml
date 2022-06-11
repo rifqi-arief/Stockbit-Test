@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph_home_feature">
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_home_feature"
+    app:startDestination="@id/authentication_flow">
+
+    <include app:graph="@navigation/authentication_flow" />
+
+    <include app:graph="@navigation/watchlist_flow" />
+
+    <include app:graph="@navigation/portofolio_flow" />
 
 </navigation>

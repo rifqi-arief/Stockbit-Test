@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+apply from: '../android_commons.gradle'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    // COMMON
+    implementation project(Modules.common)
+    // NAVIGATION
+    implementation project(Modules.navigation)
+    // ANDROID
+    implementation AndroidLibraries.constraintLayout
+    implementation AndroidLibraries.materialDesign
+    implementation AndroidLibraries.appCompat
+    implementation AndroidLibraries.navigation
+    implementation AndroidLibraries.navigationFrag
+    implementation AndroidLibraries.navigationCommon
+}

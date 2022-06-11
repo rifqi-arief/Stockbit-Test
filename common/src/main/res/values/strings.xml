@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Stockbit Example</string>
+
+    <string name="watchlist">Watchlist</string>
+    <string name="portofolio">Portofolio</string>
+
     <string name="an_error_happened">An error happened, please retry !</string>
+    <string name="enter">Masuk</string>
+    <string name="sign_in_with_google">Masuk dengan Google</string>
+    <string name="sign_in_with_facebook">Masuk dengan Facebook</string>
+    <string name="or">Atau</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Lupa Password</string>
+    <string name="login">Login</string>
+    <string name="sign_in_with_fingerprint">Masuk dengan Fingerprint</string>
+    <string name="register_question">Belum punya akun ?</string>
+    <string name="register">Daftar sekarang</string>
 </resources>
