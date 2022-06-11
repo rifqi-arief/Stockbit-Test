@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.stockbit.common.base.BaseViewModel
 import com.stockbit.model.WatchlistModel
-import com.stockbit.model.WatchlistResponse
 import com.stockbit.repository.WatchlistRepository
 import com.stockbit.repository.utils.Resource
 import kotlinx.coroutines.flow.collect
@@ -27,11 +26,11 @@ class WatchlistViewModel(private val watchlistRepository: WatchlistRepository) :
         get() = _watchlistData
 
     init {
-        getWatchlist()
+        getWatchlist(0)
     }
 
-    fun getWatchlist() = viewModelScope.launch {
-        watchlistRepository.getWatchlist().collect { res ->
+    fun getWatchlist(page : Int) = viewModelScope.launch {
+        watchlistRepository.getWatchlist(page).collect { res ->
             when(res.status) {
                 Resource.Status.SUCCESS -> {
                     _watchlistData.postValue(res.data)
@@ -42,7 +41,7 @@ class WatchlistViewModel(private val watchlistRepository: WatchlistRepository) :
                 }
                 Resource.Status.ERROR -> {
                     _watchlistData.postValue(res.data)
-                    _errorMessage.postValue(res.error.toString())
+                    _errorMessage.postValue(res.error?.message.toString())
                     _loading.postValue(false)
                 }
             }

@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.stockbit.common.base.BaseFragment
 import com.stockbit.common.base.BaseViewModel
@@ -24,6 +26,10 @@ class WatchlistFragment : BaseFragment() {
     override fun getViewModel(): BaseViewModel = viewModel
     lateinit var loading : android.app.Dialog
 
+    private var currentPage = 0
+    private var totalAvailablePages = 5
+    private lateinit var arrWatchlist: ArrayList<WatchlistModel>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,14 +42,26 @@ class WatchlistFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loading = Dialog.loading(requireContext())
+        arrWatchlist = ArrayList()
         initActions()
         observer()
     }
 
     private fun initActions() {
         binding.swipeContainer.setOnRefreshListener {
-            viewModel.getWatchlist()
+            getWatclistData()
         }
+        binding.rvWatchlist.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!binding.rvWatchlist.canScrollVertically(1)) {
+                    if (currentPage <= totalAvailablePages) {
+                        currentPage += 1
+                        getWatclistData()
+                    }
+                }
+            }
+        })
     }
 
     private fun observer() {
@@ -79,16 +97,40 @@ class WatchlistFragment : BaseFragment() {
         }
     }
 
-    fun setWatchlistRecyclerView(watchlist : List<WatchlistModel>){
-        val watchlisAdapter = WatchlistAdapter(watchlist){
+    private fun loadMoreLoading() {
+        if (currentPage == 1) {
+            if (binding.progressLoadMore.isShown) {
+                binding.progressLoadMore.visibility = View.GONE
+            } else {
+                binding.progressLoadMore.visibility = View.VISIBLE
+            }
+        } else {
+            if (binding.progressLoadMore.isShown) {
+                binding.progressLoadMore.visibility = View.GONE
+            } else {
+                binding.progressLoadMore.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    fun setWatchlistRecyclerView(watchlist : List<WatchlistModel>) {
+        val oldCount = arrWatchlist.size
+        arrWatchlist.addAll(watchlist)
+
+        val watchlisAdapter = WatchlistAdapter() {
             if (it != null) {
+                Toast.makeText(requireContext(), it.fullname, Toast.LENGTH_SHORT).show()
             }
         }
 
-        with(binding.rvWatchlist){
+        watchlisAdapter.setData(arrWatchlist, oldCount, arrWatchlist.size)
+        with(binding.rvWatchlist) {
             setHasFixedSize(true)
             adapter = watchlisAdapter
         }
     }
 
+    fun getWatclistData() {
+        viewModel.getWatchlist(currentPage)
+    }
 }
