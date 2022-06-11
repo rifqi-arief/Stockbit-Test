@@ -17,10 +17,12 @@ class WatchlistAdapter(private val arrWatchlist: List<WatchlistModel>, private v
                 tvWatchlistFullname.text = watchlist.fullname
                 tvWatchlistPrice.text = watchlist.price
                 tvWatchlistChange.text = "${watchlist.changeHour} (${watchlist.changePtcHour})"
-                if (watchlist.changePtcHour?.first()!!.uppercase().equals("-".uppercase())){
-                    tvWatchlistChange.setTextColor(Color.RED)
-                } else{
-                    tvWatchlistChange.setTextColor(Color.GREEN)
+                if (!watchlist.changePtcHour.isNullOrEmpty()) {
+                    if (watchlist.changePtcHour?.first()!!.uppercase().equals("-".uppercase())) {
+                        tvWatchlistChange.setTextColor(Color.RED)
+                    } else {
+                        tvWatchlistChange.setTextColor(Color.GREEN)
+                    }
                 }
                 root.setOnClickListener {
                     onSelect(watchlist)
@@ -40,5 +42,8 @@ class WatchlistAdapter(private val arrWatchlist: List<WatchlistModel>, private v
     }
 
     override fun getItemCount(): Int = arrWatchlist.size
+
+    override fun getItemViewType(position: Int): Int = position
+
 
 }

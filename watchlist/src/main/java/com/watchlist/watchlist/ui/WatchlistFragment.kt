@@ -36,7 +36,14 @@ class WatchlistFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loading = Dialog.loading(requireContext())
+        initActions()
         observer()
+    }
+
+    private fun initActions() {
+        binding.swipeContainer.setOnRefreshListener {
+            viewModel.getWatchlist()
+        }
     }
 
     private fun observer() {
@@ -56,6 +63,7 @@ class WatchlistFragment : BaseFragment() {
             if (it.size > 0) {
                 setWatchlistRecyclerView(it)
             }
+            binding.swipeContainer.isRefreshing = false
         })
     }
 
