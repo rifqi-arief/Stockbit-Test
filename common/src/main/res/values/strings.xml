@@ -16,4 +16,9 @@
     <string name="sign_in_with_fingerprint">Masuk dengan Fingerprint</string>
     <string name="register_question">Belum punya akun ?</string>
     <string name="register">Daftar sekarang</string>
+
+    <string name="authentication">Autentikasi</string>
+    <string name="touch_fingerprint">Letakan sidik jari anda pada sensor</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="cancel">Batal</string>
 </resources>

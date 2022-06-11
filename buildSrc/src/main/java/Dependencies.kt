@@ -29,7 +29,7 @@ object Versions {
     val kotlin = "1.5.10"
     val gradle = "4.0.1"
     val compileSdk = 30
-    val minSdk = 23
+    val minSdk = 28
     val targetSdk = 30
     val appCompat = "1.1.0-alpha02"
     val coreKtx = "1.1.0"
@@ -59,6 +59,7 @@ object Versions {
     val fragmentTest = "1.1.0-alpha06"
     val databinding = "3.3.2"
     val swipeRefresh = "1.1.0"
+    val biometric = "1.0.1"
 }
 
 object Libraries {
@@ -98,6 +99,7 @@ object AndroidLibraries {
     val navigationFrag = "androidx.navigation:navigation-fragment-ktx:${Versions.nav}"
     val navigationCommon = "androidx.navigation:navigation-common:${Versions.nav}"
     val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefresh}"
+    val biometric = "androidx.biometric:biometric:${Versions.biometric}"
 }
 
 object TestLibraries {
