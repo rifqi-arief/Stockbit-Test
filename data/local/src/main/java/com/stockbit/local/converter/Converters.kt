@@ -1,6 +1,8 @@
 package com.stockbit.local.converter
 
 import androidx.room.TypeConverter
+import com.stockbit.model.WatchlistModel
+import com.stockbit.model.WatchlistResponse
 import java.util.*
 
 class Converters {
@@ -13,4 +15,5 @@ class Converters {
     fun dateToTimestamp(date: Date?): Long? {
         return date?.time
     }
+
 }

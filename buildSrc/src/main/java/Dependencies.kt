@@ -33,8 +33,8 @@ object Versions {
     val targetSdk = 30
     val appCompat = "1.1.0-alpha02"
     val coreKtx = "1.1.0"
-    val constraintLayout = "1.1.3"
     val materialDesign = "1.4.0"
+    val constraintLayout = "1.1.3"
     val junit = "4.12"
     val androidTestRunner = "1.1.2-alpha02"
     val espressoCore = "3.2.0-alpha02"
@@ -47,6 +47,7 @@ object Versions {
     val koin = "2.0.1"
     val timber = "4.7.1"
     val lifecycle = "2.2.0"
+    //    val nav = "2.0.0"
     val nav = "2.3.2"
     val room = "2.3.0"
     val recyclerview = "1.0.0"

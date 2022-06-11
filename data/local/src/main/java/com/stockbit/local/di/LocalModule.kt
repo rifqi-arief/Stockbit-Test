@@ -10,4 +10,5 @@ private const val DATABASE = "DATABASE"
 val localModule = module {
     single(named(DATABASE)) { AppDatabase.buildDatabase(androidContext()) }
     factory { (get(named(DATABASE)) as AppDatabase).exampleDao() }
+    factory { (get(named(DATABASE)) as AppDatabase).watchlistDao() }
 }

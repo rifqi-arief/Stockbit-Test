@@ -19,4 +19,6 @@ dependencies {
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.koin
     testImplementation TestLibraries.mockWebServer
+    // COMMON
+    implementation project(Modules.common)
 }

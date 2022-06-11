@@ -14,4 +14,12 @@ dependencies {
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
     implementation AndroidLibraries.navigationCommon
+    // KOIN
+    implementation Libraries.koin
+    implementation Libraries.koinViewModel
+    // DATA
+    implementation project(Modules.local)
+    implementation project(Modules.remote)
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
 }
