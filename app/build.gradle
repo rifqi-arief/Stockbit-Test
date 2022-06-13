@@ -28,6 +28,9 @@ dependencies {
     implementation AndroidLibraries.appCompat
     implementation AndroidLibraries.navigation
     implementation AndroidLibraries.navigationFrag
+    implementation AndroidLibraries.facebook
+    implementation 'com.facebook.android:facebook-login:latest.release'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
     // FEATURE
     implementation project(Modules.authentication)
     implementation project(Modules.watchlist)

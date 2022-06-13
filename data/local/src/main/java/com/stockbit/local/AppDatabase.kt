@@ -18,7 +18,6 @@ abstract class AppDatabase: RoomDatabase() {
     // DAO
     abstract fun exampleDao(): ExampleDao
     abstract fun watchlistDao(): WatchlistDao
-//    abstract fun watchlistDao(): WatchlistDao
 
     companion object {
 

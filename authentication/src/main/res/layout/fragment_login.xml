@@ -4,221 +4,264 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/component_sizeable"
     android:background="@android:color/white">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btn_login_google"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/component_sizeable"
-        android:layout_marginHorizontal="@dimen/component_small"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="@color/greyscale_200"
-        app:strokeWidth="1dp"
-        app:cardCornerRadius="@dimen/component_small"
-        app:cardElevation="@dimen/component_null">
+        android:background="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@android:color/white"
+            android:fitsSystemWindows="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/in"
+                    android:textSize="@dimen/component_big"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/component_sizeable"
+        app:layout_constraintTop_toBottomOf="@id/appbar_login"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_login_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/component_medium_small"
-            android:paddingHorizontal="@dimen/component_sizeable">
+            android:layout_marginTop="@dimen/component_sizeable"
+            android:layout_marginHorizontal="@dimen/component_small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/greyscale_200"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="@dimen/component_small"
+            app:cardElevation="@dimen/component_null">
 
-            <ImageView
-                android:layout_width="@dimen/component_huge"
-                android:layout_height="@dimen/component_huge"
-                android:src="@drawable/ic_google"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-            
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/component_medium_small"
+                android:paddingHorizontal="@dimen/component_sizeable">
+
+                <ImageView
+                    android:layout_width="@dimen/component_huge"
+                    android:layout_height="@dimen/component_huge"
+                    android:src="@drawable/ic_google"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in_with_google"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_login_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/component_medium_small"
+            android:layout_marginHorizontal="@dimen/component_small"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_google"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/greyscale_200"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="@dimen/component_small"
+            app:cardElevation="@dimen/component_null">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/component_medium_small"
+                android:paddingHorizontal="@dimen/component_sizeable">
+
+                <ImageView
+                    android:layout_width="@dimen/component_huge"
+                    android:layout_height="@dimen/component_huge"
+                    android:src="@drawable/ic_facebook"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in_with_facebook"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/outline_or"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_facebook"
+            android:layout_marginTop="@dimen/component_huge"
+            android:gravity="center">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/greyscale_200"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_in_with_google"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:text="@string/or"
+                android:textColor="@color/greyscale_300"
+                android:textSize="@dimen/component_normal"
+                android:layout_marginHorizontal="@dimen/component_small"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/greyscale_200"/>
 
-    </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/btn_login_facebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/component_medium_small"
-        android:layout_marginHorizontal="@dimen/component_small"
-        app:layout_constraintTop_toBottomOf="@id/btn_login_google"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="@color/greyscale_200"
-        app:strokeWidth="1dp"
-        app:cardCornerRadius="@dimen/component_small"
-        app:cardElevation="@dimen/component_null">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_login_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/component_medium_small"
-            android:paddingHorizontal="@dimen/component_sizeable">
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:hint="@string/username_or_email"
+            app:layout_constraintTop_toBottomOf="@id/outline_or"
+            android:layout_marginTop="@dimen/component_extra"
+            app:boxBackgroundColor="@android:color/white">
 
-            <ImageView
-                android:layout_width="@dimen/component_huge"
-                android:layout_height="@dimen/component_huge"
-                android:src="@drawable/ic_facebook"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:hint="@string/password"
+            app:layout_constraintTop_toBottomOf="@id/layout_login_username"
+            android:layout_marginTop="@dimen/component_small"
+            app:boxBackgroundColor="@android:color/white"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/btn_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            app:layout_constraintTop_toBottomOf="@id/layout_login_password"
+            app:layout_constraintEnd_toEndOf="@id/layout_login_password"
+            android:layout_marginTop="@dimen/component_small"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/component_normal"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/background_radius_10"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/btn_forgot_password"
+            android:layout_marginTop="@dimen/component_huge"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_fingerprint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_with_fingerprint"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/backround_border"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            android:layout_marginTop="@dimen/component_sizeable"
+            android:elevation="0dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_fingerprint"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/component_special">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sign_in_with_facebook"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:text="@string/register_question"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="@dimen/component_tiny"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register"
+                android:textColor="@color/colorPrimary"/>
 
-    </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/outline_or"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_facebook"
-        android:layout_marginTop="@dimen/component_huge"
-        android:gravity="center">
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:background="@color/greyscale_200"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/or"
-            android:textColor="@color/greyscale_300"
-            android:textSize="@dimen/component_normal"
-            android:layout_marginHorizontal="@dimen/component_small"/>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            android:background="@color/greyscale_200"/>
-
-    </LinearLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_login_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:hint="@string/username_or_email"
-        app:layout_constraintTop_toBottomOf="@id/outline_or"
-        android:layout_marginTop="@dimen/component_extra"
-        app:boxBackgroundColor="@android:color/white"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_login_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:maxLines="1"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_login_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:hint="@string/password"
-        app:layout_constraintTop_toBottomOf="@id/layout_login_username"
-        android:layout_marginTop="@dimen/component_small"
-        app:boxBackgroundColor="@android:color/white"
-        app:endIconMode="password_toggle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_login_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:maxLines="1"
-            android:inputType="textPassword"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/btn_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        app:layout_constraintTop_toBottomOf="@id/layout_login_password"
-        app:layout_constraintEnd_toEndOf="@id/layout_login_password"
-        android:layout_marginTop="@dimen/component_small"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/component_normal"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:background="@drawable/background_radius_10"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@id/btn_forgot_password"
-        android:layout_marginTop="@dimen/component_huge"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login_fingerprint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sign_in_with_fingerprint"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/backround_border"
-        app:backgroundTint="@null"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-        android:layout_marginTop="@dimen/component_sizeable"
-        android:elevation="0dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/btn_login_fingerprint"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/component_special">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_question"
-            android:textColor="@android:color/black"
-            android:layout_marginEnd="@dimen/component_tiny"/>
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textColor="@color/colorPrimary"/>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
