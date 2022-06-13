@@ -13,11 +13,9 @@ class WatchlistAdapter( private val onSelect: (WatchlistModel?) -> Unit) : Recyc
 
     private var arrWatchlist =  ArrayList<WatchlistModel>()
 
-    fun setData(watchlist: ArrayList<WatchlistModel>, oldCount : Int, watchlistSize : Int) {
+    fun setData(watchlist: ArrayList<WatchlistModel>) {
         if (watchlist == null) return
         this.arrWatchlist = watchlist
-//        notifyDataSetChanged()
-        notifyItemRangeInserted(oldCount, watchlistSize)
     }
 
     class ViewHolder(private val binding : ItemWatchlistBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -47,11 +45,14 @@ class WatchlistAdapter( private val onSelect: (WatchlistModel?) -> Unit) : Recyc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.setIsRecyclable(false)
         val watchlist = arrWatchlist[position]
         holder.bind(watchlist, onSelect)
     }
 
     override fun getItemCount(): Int = arrWatchlist.size
+
+    override fun getItemId(position: Int): Long  = position.toLong()
 
     override fun getItemViewType(position: Int): Int = position
 

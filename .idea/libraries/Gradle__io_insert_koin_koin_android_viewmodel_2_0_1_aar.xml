@@ -1,14 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: io.insert-koin:koin-android-viewmodel:2.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bee050be19a1d07f975a0e778ae783f/jetified-koin-android-viewmodel-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/14e3a3234a119538f065ca6089fb9eb1/jetified-koin-android-viewmodel-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/61ba91a51dd87df985e41e85784d0486/jetified-koin-android-viewmodel-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e99900b84e1d47a992fbd96818b498d6/jetified-koin-android-viewmodel-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58dc16423baf8df4e4987c15869b3d76/jetified-koin-android-viewmodel-2.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbf74d4a95f35b00f73367781baf47b5/jetified-koin-android-viewmodel-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbf74d4a95f35b00f73367781baf47b5/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbf74d4a95f35b00f73367781baf47b5/jetified-koin-android-viewmodel-2.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0bbcf50d328cabd7ca3d7cb76312f554/jetified-koin-android-viewmodel-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0bbcf50d328cabd7ca3d7cb76312f554/jetified-koin-android-viewmodel-2.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0bbcf50d328cabd7ca3d7cb76312f554/jetified-koin-android-viewmodel-2.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.insert-koin/koin-android-viewmodel/2.0.1/ccfc9ebfbc50cd3d6ac43c4d6aaa39a8575fb4a4/koin-android-viewmodel-2.0.1-javadoc.jar!/" />

@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Stockbit Example</string>
 
+    <string name="facebook_app_id">1163951597505306</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">4ec8ccee8f45b466258c8d4343f1d7c5</string>
+
     <string name="watchlist">Watchlist</string>
     <string name="portofolio">Portofolio</string>
 
@@ -13,6 +17,7 @@
     <string name="password">Password</string>
     <string name="forgot_password">Lupa Password</string>
     <string name="login">Login</string>
+    <string name="in">Masuk</string>
     <string name="sign_in_with_fingerprint">Masuk dengan Fingerprint</string>
     <string name="register_question">Belum punya akun ?</string>
     <string name="register">Daftar sekarang</string>
@@ -21,4 +26,9 @@
     <string name="touch_fingerprint">Letakan sidik jari anda pada sensor</string>
     <string name="fingerprint">Fingerprint</string>
     <string name="cancel">Batal</string>
+    <string name="exit_button">Please click BACK again to exit</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="fingerprint_not_enable">Finerprint has not been enable in settings</string>
+    <string name="required">Required</string>
+
 </resources>

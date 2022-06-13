@@ -6,12 +6,13 @@
         <entry key="..\:/Study/test/Stockbit Test/app/src/main/res/layout/activity_main.xml" value="0.17314814814814813" />
         <entry key="..\:/Study/test/Stockbit Test/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2421875" />
         <entry key="..\:/Study/test/Stockbit Test/app/src/main/res/menu/nav_menu.xml" value="0.2421875" />
+        <entry key="..\:/Study/test/Stockbit Test/authentication/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Study/test/Stockbit Test/authentication/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Study/test/Stockbit Test/common/src/main/res/drawable/background_radius_10.xml" value="0.13802083333333334" />
         <entry key="..\:/Study/test/Stockbit Test/common/src/main/res/drawable/backround_border.xml" value="0.13802083333333334" />
         <entry key="..\:/Study/test/Stockbit Test/common/src/main/res/layout/loading.xml" value="0.2421875" />
         <entry key="..\:/Study/test/Stockbit Test/portofolio/src/main/res/layout/fragment_portofolio.xml" value="0.121875" />
-        <entry key="..\:/Study/test/Stockbit Test/watchlist/src/main/res/layout/fragment_watchlist.xml" value="0.121875" />
+        <entry key="..\:/Study/test/Stockbit Test/watchlist/src/main/res/layout/fragment_watchlist.xml" value="0.136" />
         <entry key="..\:/Study/test/Stockbit Test/watchlist/src/main/res/layout/item_watchlist.xml" value="0.176" />
       </map>
     </option>

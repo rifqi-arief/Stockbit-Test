@@ -28,7 +28,7 @@ object Releases {
 object Versions {
     val kotlin = "1.5.10"
     val gradle = "4.0.1"
-    val compileSdk = 30
+    val compileSdk = 31
     val minSdk = 28
     val targetSdk = 30
     val appCompat = "1.1.0-alpha02"
@@ -47,7 +47,6 @@ object Versions {
     val koin = "2.0.1"
     val timber = "4.7.1"
     val lifecycle = "2.2.0"
-    //    val nav = "2.0.0"
     val nav = "2.3.2"
     val room = "2.3.0"
     val recyclerview = "1.0.0"
@@ -100,6 +99,7 @@ object AndroidLibraries {
     val navigationCommon = "androidx.navigation:navigation-common:${Versions.nav}"
     val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefresh}"
     val biometric = "androidx.biometric:biometric:${Versions.biometric}"
+    val facebook = "com.facebook.android:facebook-login:latest.release"
 }
 
 object TestLibraries {

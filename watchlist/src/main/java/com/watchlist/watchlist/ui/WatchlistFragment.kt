@@ -1,14 +1,20 @@
 package com.watchlist.watchlist.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.stockbit.common.R
 import com.stockbit.common.base.BaseFragment
 import com.stockbit.common.base.BaseViewModel
 import com.stockbit.common.extension.showSnackbar
@@ -25,10 +31,12 @@ class WatchlistFragment : BaseFragment() {
     private val viewModel by viewModel<WatchlistViewModel>()
     override fun getViewModel(): BaseViewModel = viewModel
     lateinit var loading : android.app.Dialog
+    private var doubleBackToExitPressedOnce = false
 
     private var currentPage = 0
     private var totalAvailablePages = 5
     private lateinit var arrWatchlist: ArrayList<WatchlistModel>
+    private lateinit var recyclerViewState : Parcelable
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,17 +56,35 @@ class WatchlistFragment : BaseFragment() {
     }
 
     private fun initActions() {
+        val backCallback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (doubleBackToExitPressedOnce) {
+                        activity?.finishAffinity()
+                        return
+                    }
+                    doubleBackToExitPressedOnce = true
+                    Toast.makeText(requireContext(), requireActivity().getString(R.string.exit_button), Toast.LENGTH_SHORT).show()
+                    Handler(Looper.getMainLooper()).postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+                }
+            }
+
+        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), backCallback);
+
         binding.swipeContainer.setOnRefreshListener {
+            currentPage = 0
+            arrWatchlist.clear()
             getWatclistData()
         }
+
         binding.rvWatchlist.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (!binding.rvWatchlist.canScrollVertically(1)) {
-                    if (currentPage <= totalAvailablePages) {
-                        currentPage += 1
-                        getWatclistData()
-                    }
+                        if (currentPage < totalAvailablePages) {
+                            currentPage += 1
+                            getWatclistData()
+                        }
                 }
             }
         })
@@ -74,7 +100,6 @@ class WatchlistFragment : BaseFragment() {
         })
         viewModel.errorMessage.observe(viewLifecycleOwner, {
             dismissLoading()
-            Log.e("StockbitLogging", it)
             showSnackbar(it, Snackbar.LENGTH_SHORT)
         })
         viewModel.watchlistData.observe(viewLifecycleOwner, {
@@ -97,24 +122,9 @@ class WatchlistFragment : BaseFragment() {
         }
     }
 
-    private fun loadMoreLoading() {
-        if (currentPage == 1) {
-            if (binding.progressLoadMore.isShown) {
-                binding.progressLoadMore.visibility = View.GONE
-            } else {
-                binding.progressLoadMore.visibility = View.VISIBLE
-            }
-        } else {
-            if (binding.progressLoadMore.isShown) {
-                binding.progressLoadMore.visibility = View.GONE
-            } else {
-                binding.progressLoadMore.visibility = View.VISIBLE
-            }
-        }
-    }
-
+    @SuppressLint("NotifyDataSetChanged")
     fun setWatchlistRecyclerView(watchlist : List<WatchlistModel>) {
-        val oldCount = arrWatchlist.size
+        recyclerViewState = binding.rvWatchlist.layoutManager?.onSaveInstanceState()!!
         arrWatchlist.addAll(watchlist)
 
         val watchlisAdapter = WatchlistAdapter() {
@@ -123,10 +133,11 @@ class WatchlistFragment : BaseFragment() {
             }
         }
 
-        watchlisAdapter.setData(arrWatchlist, oldCount, arrWatchlist.size)
+        watchlisAdapter.notifyDataSetChanged()
+        watchlisAdapter.setData(arrWatchlist)
         with(binding.rvWatchlist) {
-            setHasFixedSize(true)
             adapter = watchlisAdapter
+            layoutManager?.onRestoreInstanceState(recyclerViewState)
         }
     }
 
